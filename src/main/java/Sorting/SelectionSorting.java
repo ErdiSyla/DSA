@@ -2,7 +2,7 @@ package Sorting;
 
 public class SelectionSorting {
     public static void main(String[] args) {
-        int[] nums = {6, 5, 2, 8, 9 ,4};
+        int[] nums = {6, 5, 2, 8, 9, 4};
         int size = nums.length;
         int minIndex = 0;
         int temp = 0;
