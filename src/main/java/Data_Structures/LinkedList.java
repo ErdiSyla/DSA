@@ -12,6 +12,10 @@ public class LinkedList {
         nums.add(9);
         nums.add(6);
 
+        nums.addFirst(7);
+
+        nums.delete(9);
+
         nums.printValues();
     }
 
@@ -29,6 +33,13 @@ public class LinkedList {
         }
     }
 
+    public void addFirst(int data){
+
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
     public void printValues(){
         Node current = head;
 
@@ -38,6 +49,22 @@ public class LinkedList {
         }
         System.out.println();
     }
+
+    public void delete(int data){
+
+        Node current = head;
+
+        while(current.next != null && current.next.getData() != data){
+            current = current.next;
+        }
+
+        if(current.next != null){
+            current.next = current.next.next;
+        }else{
+            System.out.println("The value specified does not exist in the LinkedList.");
+        }
+    }
+
 }
 
 class Node {
@@ -47,5 +74,8 @@ class Node {
     public Node(int data){
         this.data = data;
         next = null;
+    }
+    public int getData(){
+        return data;
     }
 }
